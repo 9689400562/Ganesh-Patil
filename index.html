@@ -2303,20 +2303,12 @@
       ].join("\n");
 
       const to = "ganeshan.patil@gmail.com";
-      const gmailAppLink =
-        `googlegmail://co?to=${encodeURIComponent(to)}` +
-        `&subject=${encodeURIComponent(subject)}` +
+      const mailtoLink =
+        `mailto:${to}` +
+        `?subject=${encodeURIComponent(subject)}` +
         `&body=${encodeURIComponent(emailBody)}`;
 
-      const gmailWebLink =
-        `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}` +
-        `&su=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(emailBody)}`;
-
-      window.location.href = gmailAppLink;
-      setTimeout(() => {
-        window.location.href = gmailWebLink;
-      }, 500);
+      window.location.href = mailtoLink;
     });
   </script>
 </body>
