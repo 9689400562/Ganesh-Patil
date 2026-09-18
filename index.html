@@ -958,21 +958,42 @@
     }
 
     /* Contact */
+    .contact-section {
+      background:
+        radial-gradient(circle at top left, rgba(94, 163, 255, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(74, 222, 128, 0.12), transparent 32%),
+        linear-gradient(135deg, #f5fbff 0%, #eef5ff 28%, #f6f1ff 100%);
+    }
+
     .contact-grid {
       display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      gap: 100px;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 1180px;
+      padding: 42px 52px 54px;
+      border: 1px solid rgba(116, 145, 180, 0.18);
+      border-radius: 36px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.72));
+      box-shadow: 0 28px 70px rgba(27, 53, 81, 0.08);
+    }
+
+    .contact-copy {
+      width: min(100%, 980px);
+      margin: 0 auto;
     }
 
     .contact-copy > p:not(.eyebrow) {
-      max-width: 480px;
+      max-width: 760px;
       margin-top: 22px;
       color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.4rem);
+      line-height: 1.6;
     }
 
     .contact-links {
       display: grid;
       gap: 19px;
+      max-width: 620px;
       margin-top: 35px;
     }
 
@@ -980,35 +1001,45 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      width: fit-content;
+      min-width: 290px;
+      padding: 8px 14px 8px 8px;
+      border: 1px solid rgba(131, 149, 177, 0.18);
+      border-radius: 16px;
       color: var(--primary);
+      background: rgba(255, 255, 255, 0.5);
       font-size: 0.86rem;
       font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .contact-link:hover {
       color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(24, 87, 167, 0.08);
     }
 
     .contact-link-icon {
       display: grid;
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       place-items: center;
-      border-radius: 10px;
-      color: var(--secondary);
-      background: var(--surface-alt);
-      font-size: 0.8rem;
+      border-radius: 12px;
+      color: var(--white);
+      background: linear-gradient(135deg, #1a78d5 0%, #4ec9c8 100%);
+      font-size: 0.9rem;
       font-weight: 850;
+      box-shadow: 0 12px 22px rgba(28, 112, 214, 0.18);
     }
 
     .contact-link small {
       display: block;
       margin-bottom: 2px;
-      color: var(--muted);
+      color: #3d6eb7;
       font-size: 0.68rem;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
     }
 
     .contact-form {
@@ -2041,7 +2072,7 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <section class="section contact-section" id="contact">
       <div class="container contact-grid">
         <div class="contact-copy reveal">
           <p class="eyebrow">Get In Touch</p>
