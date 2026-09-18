@@ -1543,7 +1543,7 @@
           <h2>Software Engineer</h2>
 
           <p class="hero-description">
-            SAP ABAP Technical Consultant with 4+ years of experience designing
+            SAP ABAP Technical Consultant with 4.8 years of experience designing
             and developing SAP applications using ABAP, CDS, OData, RAP, Fiori
             Elements, and SAP BTP.
           </p>
@@ -1655,7 +1655,7 @@
 
             <div class="info-item">
               <span class="info-label">Experience</span>
-              <strong>4+ Years</strong>
+              <strong>4.8 Years</strong>
             </div>
 
             <div class="info-item">
@@ -2117,11 +2117,6 @@
           <button type="submit" class="button button-primary form-submit">
             Send Message <span aria-hidden="true">↗</span>
           </button>
-
-          <p class="form-note">
-            This form opens your default email application. No backend service
-            is connected.
-          </p>
         </form>
       </div>
     </section>
@@ -2307,12 +2302,21 @@
         message
       ].join("\n");
 
-      const mailtoLink =
-        "mailto:ganeshan.patil@gmail.com" +
-        `?subject=${encodeURIComponent(subject)}` +
+      const to = "ganeshan.patil@gmail.com";
+      const gmailAppLink =
+        `googlegmail://co?to=${encodeURIComponent(to)}` +
+        `&subject=${encodeURIComponent(subject)}` +
         `&body=${encodeURIComponent(emailBody)}`;
 
-      window.location.href = mailtoLink;
+      const gmailWebLink =
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}` +
+        `&su=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(emailBody)}`;
+
+      window.location.href = gmailAppLink;
+      setTimeout(() => {
+        window.location.href = gmailWebLink;
+      }, 500);
     });
   </script>
 </body>
