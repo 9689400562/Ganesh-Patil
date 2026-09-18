@@ -2100,6 +2100,7 @@
           <input type="hidden" name="_subject" value="Portfolio Contact Form" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_next" value="https://9689400562.github.io/Ganesh-Patil/" />
 
           <div class="form-row">
             <div class="form-field">
@@ -2292,43 +2293,6 @@
       });
     });
 
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const name = document.querySelector("#name").value.trim();
-      const email = document.querySelector("#email").value.trim();
-      const subject = document.querySelector("#subject").value.trim();
-      const message = document.querySelector("#message").value.trim();
-
-      if (!name || !email || !subject || !message) {
-        return;
-      }
-
-      try {
-        const response = await fetch(contactForm.action, {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            subject,
-            message
-          })
-        });
-
-        if (response.ok) {
-          contactForm.reset();
-          alert("Your message has been sent successfully.");
-        } else {
-          alert("Something went wrong. Please try again or email me directly.");
-        }
-      } catch (error) {
-        alert("Something went wrong. Please try again or email me directly.");
-      }
-    });
   </script>
 </body>
 </html>
