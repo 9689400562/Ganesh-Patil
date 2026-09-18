@@ -2091,7 +2091,16 @@
           </div>
         </div>
 
-        <form class="contact-form reveal reveal-delay" id="contactForm">
+        <form
+          class="contact-form reveal reveal-delay"
+          id="contactForm"
+          action="https://formsubmit.co/ajax/ganeshan.patil@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="Portfolio Contact Form" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
           <div class="form-row">
             <div class="form-field">
               <label for="name">Name</label>
@@ -2283,7 +2292,7 @@
       });
     });
 
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const name = document.querySelector("#name").value.trim();
@@ -2295,20 +2304,30 @@
         return;
       }
 
-      const emailBody = [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        "",
-        message
-      ].join("\n");
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            subject,
+            message
+          })
+        });
 
-      const to = "ganeshan.patil@gmail.com";
-      const mailtoLink =
-        `mailto:${to}` +
-        `?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(emailBody)}`;
-
-      window.location.href = mailtoLink;
+        if (response.ok) {
+          contactForm.reset();
+          alert("Your message has been sent successfully.");
+        } else {
+          alert("Something went wrong. Please try again or email me directly.");
+        }
+      } catch (error) {
+        alert("Something went wrong. Please try again or email me directly.");
+      }
     });
   </script>
 </body>
