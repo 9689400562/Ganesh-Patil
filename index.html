@@ -376,18 +376,20 @@
     }
 
     .profile-avatar {
-      display: grid;
       width: 132px;
       height: 132px;
       margin: 18px auto 25px;
-      place-items: center;
       border: 8px solid var(--white);
       border-radius: 50%;
-      color: var(--white);
-      background: linear-gradient(145deg, var(--primary), var(--secondary));
+      overflow: hidden;
       box-shadow: 0 12px 30px rgba(11, 31, 58, 0.18);
-      font-size: 2.2rem;
-      font-weight: 850;
+    }
+
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .profile-card h3 {
@@ -1592,8 +1594,8 @@
               <span>RAP-based<br />development</span>
             </div>
 
-            <div class="profile-avatar" aria-label="Ganesh Patil initials">
-              GP
+            <div class="profile-avatar" aria-label="Ganesh Patil">
+              <img src="assets/ganesh.png" alt="Ganesh Patil" />
             </div>
 
             <h3>Ganesh Patil</h3>
