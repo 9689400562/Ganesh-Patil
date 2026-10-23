@@ -457,16 +457,16 @@
       z-index: 3;
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 14px;
+      gap: 8px;
+      padding: 8px 10px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 10px;
       color: var(--primary);
       background: rgba(255, 255, 255, 0.96);
       box-shadow: var(--shadow-sm);
-      font-size: 0.68rem;
+      font-size: 0.58rem;
       font-weight: 750;
-      line-height: 1.25;
+      line-height: 1.15;
       white-space: nowrap;
     }
 
@@ -477,18 +477,19 @@
 
     .floating-card-two {
       top: 26px;
-      right: 18px;
+      left: 178px;
+      transform: none;
     }
 
     .floating-icon {
       display: grid;
-      width: 30px;
-      height: 30px;
+      width: 24px;
+      height: 24px;
       place-items: center;
-      border-radius: 8px;
+      border-radius: 7px;
       color: var(--white);
       background: var(--secondary);
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
 
     .hero-glow {
@@ -1339,29 +1340,35 @@
       }
 
       .hero-visual {
-        min-height: 450px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-height: auto;
       }
 
       .profile-card {
-        top: 20px;
+        position: relative;
+        top: 0;
         right: 0;
         left: 0;
         width: 100%;
         padding: 23px;
       }
 
-      .floating-card-one {
-        top: 22px;
-        left: 0;
-        transform: scale(0.8);
-        transform-origin: left center;
+      .floating-card {
+        position: static;
+        max-width: 132px;
+        padding: 8px 9px;
+        font-size: 0.54rem;
+        transform: none;
       }
 
+      .floating-card-one,
       .floating-card-two {
-        right: 0;
-        bottom: 12px;
-        transform: scale(0.8);
-        transform-origin: right center;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
       }
 
       .section-heading {
@@ -1578,20 +1585,20 @@
         </div>
 
         <div class="hero-visual reveal reveal-delay">
+          <div class="floating-card floating-card-one">
+            <span class="floating-icon">⌘</span>
+            <span>Cloud-aligned<br />solutions</span>
+          </div>
+
+          <div class="floating-card floating-card-two">
+            <span class="floating-icon">✦</span>
+            <span>RAP-based<br />development</span>
+          </div>
+
           <div class="profile-card">
             <div class="profile-card-top">
               <span>PROFILE</span>
               <span class="profile-status">● ACTIVE</span>
-            </div>
-
-            <div class="floating-card floating-card-one">
-              <span class="floating-icon">⌘</span>
-              <span>Cloud-aligned<br />solutions</span>
-            </div>
-
-            <div class="floating-card floating-card-two">
-              <span class="floating-icon">✦</span>
-              <span>RAP-based<br />development</span>
             </div>
 
             <div class="profile-avatar" aria-label="Ganesh Patil">
