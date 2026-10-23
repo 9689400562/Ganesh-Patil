@@ -353,7 +353,7 @@
       right: 30px;
       width: min(100%, 430px);
       margin-left: auto;
-      padding: 84px 28px 34px;
+      padding: 78px 28px 34px;
       border: 1px solid rgba(255, 255, 255, 0.7);
       border-radius: var(--radius-lg);
       background: rgba(255, 255, 255, 0.85);
@@ -1353,25 +1353,27 @@
         right: 0;
         left: 0;
         width: 100%;
-        padding: 23px;
+        padding: 90px 23px 23px;
       }
 
       .floating-card {
-        position: static;
-        width: 100%;
-        max-width: 170px;
-        margin: 10px auto 0;
+        position: absolute;
+        left: 50%;
+        width: 140px;
         padding: 8px 9px;
         font-size: 0.54rem;
-        transform: none;
+        transform: translateX(-50%);
       }
 
-      .floating-card-one,
+      .floating-card-one {
+        top: 18px;
+        left: 50%;
+      }
+
       .floating-card-two {
-        top: auto;
-        left: auto;
+        top: 76px;
+        left: 50%;
         right: auto;
-        bottom: auto;
       }
 
       .section-heading {
