@@ -1357,23 +1357,36 @@
       }
 
       .floating-card {
-        position: absolute;
-        left: 50%;
-        width: 140px;
+        position: static;
+        display: flex;
+        width: 100%;
+        max-width: 170px;
+        margin: 0 auto 10px;
         padding: 8px 9px;
         font-size: 0.54rem;
-        transform: translateX(-50%);
+        transform: none;
       }
 
       .floating-card-one {
-        top: 18px;
-        left: 50%;
+        top: auto;
+        left: auto;
       }
 
       .floating-card-two {
-        top: 76px;
-        left: 50%;
+        top: auto;
+        left: auto;
         right: auto;
+      }
+
+      .profile-card-top {
+        flex-wrap: wrap;
+      }
+
+      .profile-card-top .profile-status {
+        display: block;
+        width: 100%;
+        margin-top: 2px;
+        text-align: right;
       }
 
       .section-heading {
